@@ -1,0 +1,1 @@
+openmymind learning zig: https://www.openmymind.net/learning_zig/language_overview_1/
