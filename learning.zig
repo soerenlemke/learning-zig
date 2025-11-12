@@ -1,12 +1,23 @@
 const std = @import("std");
 
 pub fn main() void {
-    _ = add(8999, 2);
+    const leto = User{
+        .id = 1,
+        .power = 9001,
+        .manager = null,
+    };
+
+    const duncan = User{
+        .id = 1,
+        .power = 9001,
+        .manager = &leto,
+    };
+
+    std.debug.print("{any}\n{any}", .{ leto, duncan });
 }
 
-fn add(a: i64, b: i64) i64 {
-    _ = b;
-
-    // notice this is a + a, not a + b
-    return a + a;
-}
+pub const User = struct {
+    id: u64,
+    power: i32,
+    manager: ?*const User,
+};
